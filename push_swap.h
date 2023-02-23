@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 19:56:52 by analbarr          #+#    #+#             */
-/*   Updated: 2023/02/23 20:41:55 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/02/23 22:44:29 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,15 @@ void		add_bottom_stack(t_stack **stack, t_stack *new);
 int			get_stack_size(t_stack *stack);
 void		assign_index(t_stack *stack_a, int stack_size);
 
+/*Sorting*/
+int			is_sorted(t_stack *stack);
+
+
 /*utils*/
 long int	ft_atoi(const char *str);
 void		free_stack(t_stack **stack);
 void		error_exit(t_stack **stack_a, t_stack **stack_b);
 
 /*push_swap*/
-int			is_sorted(t_stack *stack);
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size);
 #endif

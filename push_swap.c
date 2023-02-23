@@ -6,12 +6,13 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:17:11 by analbarr          #+#    #+#             */
-/*   Updated: 2023/02/23 20:41:51 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/02/23 22:11:38 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*Checks if the stack is sorted. Returns 1 if true, 0 if not.*/ 
 int	is_sorted(t_stack *stack)
 {
 	while (stack->next != NULL)
@@ -24,7 +25,7 @@ int	is_sorted(t_stack *stack)
 }
 
 /*Evaluates the sorting case depending on the stack_size.*/
-/*static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
+static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		play_sa(stack_a);
@@ -32,7 +33,7 @@ int	is_sorted(t_stack *stack)
 		short_sort(stack_a);
 	else if (stack_size > 3 && !is_sorted(*stack_a))
 		long_sort(stack_a, stack_b);
-}*/
+}
 
 int	main(int argc, char **argv)
 {
