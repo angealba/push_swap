@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:17:11 by analbarr          #+#    #+#             */
-/*   Updated: 2023/02/23 22:11:38 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/02 20:29:51 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		play_sa(stack_a);
 	else if (stack_size == 3 && !is_sorted(*stack_a))
 		short_sort(stack_a);
-	else if (stack_size > 3 && !is_sorted(*stack_a))
-		long_sort(stack_a, stack_b);
+	//else if (stack_size > 3 && !is_sorted(*stack_a))
+	//	long_sort(stack_a, stack_b);
+	else
+		return;
 }
 
 int	main(int argc, char **argv)
@@ -55,9 +57,25 @@ int	main(int argc, char **argv)
 	/*push_swap(&stack_a, &stack_b, stack_size);
 	free;*/
 	printf("is sorted? %d\n", is_sorted(stack_a));
-	while (stack_a)
+	/*while (stack_a)
 	{
 		printf("value: %d, index: %d\n", stack_a->value, stack_a->index);
+		stack_a = stack_a->next;
+	}*/
+	/*while(stack_a != NULL)
+	{
+		play_pb(&stack_a, &stack_b);
+	}*/
+	/*while(stack_b)
+	{
+		printf("value_b: %d, index_b: %d\n", stack_b->value, stack_b->index);
+		stack_b = stack_b->next;
+	}*/
+	/*play_rra(&stack_a);*/
+	push_swap(&stack_a, &stack_b, stack_size);
+	while (stack_a)
+	{
+		printf("value2: %d, index2: %d\n", stack_a->value, stack_a->index);
 		stack_a = stack_a->next;
 	}
 	return (0);

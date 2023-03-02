@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:47:23 by analbarr          #+#    #+#             */
-/*   Updated: 2023/02/23 22:44:21 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:06:52 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack	*fill_stack(int argc, char **argv)
 }
 
 /*Assigns an index to each element in the stack to have an idea of the order
- * that each element should have from the highest numer (stack_size) to the
+ * that each element should have from the highest number (stack_size) to the
  * lower (1).*/
 void	assign_index(t_stack *stack_a, int stack_size)
 {
