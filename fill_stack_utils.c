@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:51:18 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/01 17:26:28 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:53:32 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_stack	*get_bottom(t_stack *stack)
 }
 
 /*Returns the element before the last element of the stack.*/
-t_stack *get_one_before_bottom(t_stack *stack)
+t_stack	*get_one_before_bottom(t_stack *stack)
 {
 	while (stack && stack->next && stack->next->next != NULL)
 		stack = stack->next;

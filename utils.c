@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:59:09 by analbarr          #+#    #+#             */
-/*   Updated: 2023/02/23 19:03:57 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:57:09 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,12 @@ void	error_exit(t_stack **stack_a, t_stack **stack_b)
 		free_stack(stack_b);
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+/*Returns the absolute value of an int.*/
+int	num_abs(int nb)
+{
+	if (nb < 0)
+		return (nb * -1);
+	return (nb);
 }

@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 19:56:52 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/01 19:51:16 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:44:57 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,13 @@ void		assign_index(t_stack *stack_a, int stack_size);
 /*Sorting*/
 int			is_sorted(t_stack *stack);
 void		short_sort(t_stack **stack);
+void		long_sort(t_stack **stack_a, t_stack **stack_b);
 
 /*utils*/
 long int	ft_atoi(const char *str);
 void		free_stack(t_stack **stack);
 void		error_exit(t_stack **stack_a, t_stack **stack_b);
+int			num_abs(int nb);
 
 /*moves*/
 void		play_sa(t_stack **stack_a);
@@ -62,6 +64,13 @@ void		play_rrb(t_stack **stack_b);
 void		play_rrr(t_stack **stack_a, t_stack **stack_b);
 void		play_pa(t_stack **stack_a, t_stack **stack_b);
 void		play_pb(t_stack **stack_a, t_stack **stack_b);
+
+/*efficient move*/
+void		get_cost(t_stack **stack_a, t_stack **stack_b);
+void		efficient_move(t_stack **stack_a, t_stack **stack_b);
+void		cheapest_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
+void		get_target_position(t_stack **stack_a, t_stack **stack_b);
+int			get_lowest_index_pos(t_stack **stack);
 
 /*push_swap*/
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size);
