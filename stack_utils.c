@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_stack_utils.c                                 :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:51:18 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/08 19:53:32 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:51:05 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_stack	*get_one_before_bottom(t_stack *stack)
 }
 
 /*Adds an element to the bottom of the stack.*/
-void	add_bottom_stack(t_stack **stack, t_stack *new)
+void	add_stack(t_stack **stack, t_stack *new)
 {
 	t_stack	*tail;
 

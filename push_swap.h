@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 19:56:52 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/08 20:44:57 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:51:15 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ typedef struct s_stack
 }	t_stack;
 
 /*input*/
-int			input_check(char **argv);
+int			input_is_ok(char *str);
+int			is_duplicate(t_stack *stack_a);
 
 /*fill stack*/
-t_stack		*fill_stack(int argc, char **argv);
 t_stack		*new_stack(int value);
 t_stack		*get_bottom(t_stack *stack);
 t_stack		*get_one_before_bottom(t_stack *stack);
-void		add_bottom_stack(t_stack **stack, t_stack *new);
+void		add_stack(t_stack **stack, t_stack *new);
 int			get_stack_size(t_stack *stack);
 void		assign_index(t_stack *stack_a, int stack_size);
 
@@ -51,6 +51,8 @@ long int	ft_atoi(const char *str);
 void		free_stack(t_stack **stack);
 void		error_exit(t_stack **stack_a, t_stack **stack_b);
 int			num_abs(int nb);
+char		**ft_split(char const *s, char c);
+size_t		ft_strlen(const char *s);
 
 /*moves*/
 void		play_sa(t_stack **stack_a);
@@ -72,6 +74,4 @@ void		cheapest_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
 void		get_target_position(t_stack **stack_a, t_stack **stack_b);
 int			get_lowest_index_pos(t_stack **stack);
 
-/*push_swap*/
-static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size);
 #endif

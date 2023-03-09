@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:59:09 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/08 19:57:09 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:57:31 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,14 @@ int	num_abs(int nb)
 	if (nb < 0)
 		return (nb * -1);
 	return (nb);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

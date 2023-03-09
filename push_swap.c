@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:17:11 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/08 20:44:41 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:59:00 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,31 @@ int	is_sorted(t_stack *stack)
 		stack = stack->next;
 	}
 	return (1);
+}
+
+void	get_numbers(char *argv, t_stack **stack_a)
+{
+	char 		**input;
+	long int	num;
+	int			i;
+
+	input = ft_split(argv, ' ');
+	i = 0;
+	while (input[i] != '\0')
+	{
+		if (input_is_ok(input[i]))
+		{
+			num = ft_atoi(input[i]);
+			if (num > INT_MAX || num < INT_MIN)
+				error_exit(stack_a, NULL);
+			add_stack(stack_a, new_stack(num));
+		}
+		else
+			error_exit(NULL, NULL);
+		free(input[i]);
+		i++;
+	}
+	free(input);
 }
 
 /*Evaluates the sorting case depending on the stack_size.*/
@@ -42,21 +67,25 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;
+	int		i;
 
 	if (argc < 2)
 		return (0);
-	if (!input_check(argv))
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
+	i = 1;
+	stack_a = NULL;
 	stack_b = NULL;
-	stack_a = fill_stack(argc, argv);
+	while (i < argc)
+	{
+		get_numbers(argv[i], &stack_a);
+		i++;
+	}
+	if (is_duplicate(stack_a))
+		error_exit(&stack_a, NULL);
 	stack_size = get_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
 	/*push_swap(&stack_a, &stack_b, stack_size);
 	free;*/
-	printf("is sorted? %d\n", is_sorted(stack_a));
+	//printf("is sorted? %d\n", is_sorted(stack_a));
 	/*while (stack_a)
 	{
 		printf("value: %d, index: %d\n", stack_a->value, stack_a->index);
@@ -73,10 +102,12 @@ int	main(int argc, char **argv)
 	}*/
 	/*play_rra(&stack_a);*/
 	push_swap(&stack_a, &stack_b, stack_size);
-	while (stack_a)
+	/*while (stack_a)
 	{
 		printf("value2: %d, index2: %d\n", stack_a->value, stack_a->index);
 		stack_a = stack_a->next;
-	}
+	}*/
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
