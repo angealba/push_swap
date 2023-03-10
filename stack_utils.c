@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:51:18 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/09 15:51:05 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:35:03 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_stack	*new_stack(int value)
 {
 	t_stack	*new;
 
+	//printf("ent %d\n", value);
 	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (0);
@@ -27,7 +28,9 @@ t_stack	*new_stack(int value)
 	new->cost_a = -1;
 	new->cost_b = -1;
 	new->next = NULL;
+	//printf("salida %d\n", new->value);
 	return (new);
+
 }
 
 /*Returns the last element of the stack.*/

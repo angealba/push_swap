@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:59:09 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/09 15:57:31 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:51:27 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 /*Converts the input (string) into a long int*/
 long int	ft_atoi(const char *str)
 {
-	unsigned long	num;
+	long int		num;
 	int				i;
 	int				sign;
 
+	num = 0;
 	i = 0;
 	sign = 1;
-	if (str[i] != '\0' && (str[i] == '+' || str[i] == '-'))
+	if (str[i] == '+')
+	   i++;
+	else if (str[i] == '-')
 	{
-		if (str[i] == '-')
-			sign *= -1;
+		sign *= -1;
 		i++;
 	}
-	num = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num = (num * 10) + (str[i] - '0');
@@ -65,7 +66,7 @@ void	error_exit(t_stack **stack_a, t_stack **stack_b)
 }
 
 /*Returns the absolute value of an int.*/
-int	num_abs(int nb)
+long int	num_abs(long int nb)
 {
 	if (nb < 0)
 		return (nb * -1);

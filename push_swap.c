@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:17:11 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/09 15:59:00 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:08:24 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	get_numbers(char *argv, t_stack **stack_a)
 		if (input_is_ok(input[i]))
 		{
 			num = ft_atoi(input[i]);
+			//printf("num %ld\n", num);
 			if (num > INT_MAX || num < INT_MIN)
 				error_exit(stack_a, NULL);
 			add_stack(stack_a, new_stack(num));
@@ -54,7 +55,7 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		play_sa(stack_a);
-	else if (stack_size == 3 && !is_sorted(*stack_a))
+	else if (stack_size == 3)
 		short_sort(stack_a);
 	else if (stack_size > 3 && !is_sorted(*stack_a))
 		long_sort(stack_a, stack_b);
@@ -83,10 +84,9 @@ int	main(int argc, char **argv)
 		error_exit(&stack_a, NULL);
 	stack_size = get_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
-	/*push_swap(&stack_a, &stack_b, stack_size);
-	free;*/
 	//printf("is sorted? %d\n", is_sorted(stack_a));
-	/*while (stack_a)
+	//printf("INT MIN: %d\n INT MAX: %d\n atoi: %ld\n", INT_MIN, INT_MAX, ft_atoi("-2147483648"));
+	/*while (stack_a != NULL)
 	{
 		printf("value: %d, index: %d\n", stack_a->value, stack_a->index);
 		stack_a = stack_a->next;

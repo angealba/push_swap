@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:24:52 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/09 15:56:40 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:53:43 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	is_duplicate(t_stack *stack_a)
 
 /*Checks if all str generated after spliting the input (argv) are numbers.
  * Returns: 1 if true, 0 if not.*/
-int	input_is_ok(char *str)
+long	input_is_ok(char *str)
 {
 	int	i;
 
@@ -68,7 +68,7 @@ void	assign_index(t_stack *stack_a, int stack_size)
 		while (ptr)
 		{
 			if (ptr->value == INT_MIN && ptr->index == 0)
-				ptr->value = 1;
+				ptr->index = 1;
 			if (ptr->value > value_ref && ptr->index == 0)
 			{
 				value_ref = ptr->value;

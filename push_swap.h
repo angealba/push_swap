@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 19:56:52 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/09 15:51:15 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:52:35 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 }	t_stack;
 
 /*input*/
-int			input_is_ok(char *str);
+long		input_is_ok(char *str);
 int			is_duplicate(t_stack *stack_a);
 
 /*fill stack*/
@@ -50,7 +50,7 @@ void		long_sort(t_stack **stack_a, t_stack **stack_b);
 long int	ft_atoi(const char *str);
 void		free_stack(t_stack **stack);
 void		error_exit(t_stack **stack_a, t_stack **stack_b);
-int			num_abs(int nb);
+long int	num_abs(long int nb);
 char		**ft_split(char const *s, char c);
 size_t		ft_strlen(const char *s);
 
