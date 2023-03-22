@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:17:11 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/14 19:41:09 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/22 12:25:45 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
+/*Takes input (argv) as a string, splits it into an array of strings, checks 
+ * if each string is valid according to input parameters and converts it to an 
+ * integer. Adds it as a new element to the stack_a.*/
 void	get_numbers(char *argv, t_stack **stack_a)
 {
 	char		**input;
