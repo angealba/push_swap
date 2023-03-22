@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:59:09 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/10 17:51:27 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:29:43 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ long int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	if (str[i] == '+')
-	   i++;
+		i++;
 	else if (str[i] == '-')
 	{
 		sign *= -1;

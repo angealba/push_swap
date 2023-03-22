@@ -6,7 +6,7 @@
 /*   By: analbarr <analbarr@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:17:11 by analbarr          #+#    #+#             */
-/*   Updated: 2023/03/10 18:08:24 by analbarr         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:41:09 by analbarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_sorted(t_stack *stack)
 
 void	get_numbers(char *argv, t_stack **stack_a)
 {
-	char 		**input;
+	char		**input;
 	long int	num;
 	int			i;
 
@@ -37,7 +37,6 @@ void	get_numbers(char *argv, t_stack **stack_a)
 		if (input_is_ok(input[i]))
 		{
 			num = ft_atoi(input[i]);
-			//printf("num %ld\n", num);
 			if (num > INT_MAX || num < INT_MIN)
 				error_exit(stack_a, NULL);
 			add_stack(stack_a, new_stack(num));
@@ -84,30 +83,31 @@ int	main(int argc, char **argv)
 		error_exit(&stack_a, NULL);
 	stack_size = get_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
-	//printf("is sorted? %d\n", is_sorted(stack_a));
-	//printf("INT MIN: %d\n INT MAX: %d\n atoi: %ld\n", INT_MIN, INT_MAX, ft_atoi("-2147483648"));
-	/*while (stack_a != NULL)
-	{
-		printf("value: %d, index: %d\n", stack_a->value, stack_a->index);
-		stack_a = stack_a->next;
-	}*/
-	/*while(stack_a != NULL)
-	{
-		play_pb(&stack_a, &stack_b);
-	}*/
-	/*while(stack_b)
-	{
-		printf("value_b: %d, index_b: %d\n", stack_b->value, stack_b->index);
-		stack_b = stack_b->next;
-	}*/
-	/*play_rra(&stack_a);*/
 	push_swap(&stack_a, &stack_b, stack_size);
-	/*while (stack_a)
-	{
-		printf("value2: %d, index2: %d\n", stack_a->value, stack_a->index);
-		stack_a = stack_a->next;
-	}*/
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
 }
+
+/*printf("is sorted? %d\n", is_sorted(stack_a));
+	while (stack_a != NULL)
+	{
+		printf("value: %d, index: %d\n", stack_a->value, stack_a->index);
+		stack_a = stack_a->next;
+	}
+	while(stack_a != NULL)
+	{
+		play_pb(&stack_a, &stack_b);
+	}
+	while(stack_b)
+	{
+		printf("value_b: %d, index_b: %d\n", stack_b->value, stack_b->index);
+		stack_b = stack_b->next;
+	}
+	play_rra(&stack_a);
+	while (stack_a)
+	{
+		printf("value2: %d, index2: %d\n", stack_a->value, stack_a->index);
+		stack_a = stack_a->next;
+	//system("leaks push_swap");
+	}*/
